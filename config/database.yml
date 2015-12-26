@@ -49,6 +49,8 @@ test:
 #
 production:
   <<: *default
+  adapter: mysq2
   database: acts2_production
-  username: acts2
+  username: <%= ENV['ACTS2_DATABASE_USERNAME'] %>
   password: <%= ENV['ACTS2_DATABASE_PASSWORD'] %>
+  socket: /var/run/mysqld/mysqld.sock
