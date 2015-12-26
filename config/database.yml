@@ -49,7 +49,7 @@ test:
 #
 production:
   <<: *default
-  adapter: mysq2
+  adapter: mysql2
   database: acts2_production
   username: <%= ENV['ACTS2_DATABASE_USERNAME'] %>
   password: <%= ENV['ACTS2_DATABASE_PASSWORD'] %>
