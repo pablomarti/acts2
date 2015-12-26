@@ -1,36 +1,37 @@
-<h2 class="page-title">Registro <small>Statistics and more</small></h2>
+<h2 class="page-title">Registro <small>IBVN - Casa de Juicio 2016</small></h2>
 
 <div class="row">
-  <div class="col-lg-8">
+  <div class="col-lg-12">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
+      <br />
 
-      <div class="field">
-        <%= f.label :first_name, 'Nombre' %><br />
-        <%= f.text_field :first_name, autofocus: true %>
+      <div class="field form-group">
+        <%= f.label :first_name, '* Nombre' %><br />
+        <%= f.text_field :first_name, autofocus: true, :class => 'form-control', :required => true %>
       </div>
       
-      <div class="field">
-        <%= f.label :last_name, 'Apellido' %><br />
-        <%= f.text_field :last_name %>
+      <div class="field form-group">
+        <%= f.label :last_name, '* Apellido' %><br />
+        <%= f.text_field :last_name, :class => 'form-control', :required => true %>
       </div>
       
-      <div class="field">
+      <div class="field form-group">
         <%= f.label :birth_date, 'Fecha de nacimiento' %><br />
-        <%= f.date_select :birth_date %>
+        <%= f.date_select :birth_date, :start_year => 1920, :end_year => Time.now.year %>
       </div>
 
-      <div>
+<!--       <div class="field form-group">
         <%= f.label :country, 'Pais' %><br />
-        <%= select_tag :country, options_from_collection_for_select(Country.order('id asc'), 'id', 'name'), :class => 'form-control' %>
-      </div>
+        <%= f.select :country, Country.order('id asc').collect{ |c| [c.name ,c.id] }, {}, :class => 'form-control' %>
+      </div> -->
 
-      <div>
+      <div class="field form-group">
         <%= f.label :church_campus_id, 'Campus' %><br />
         <%= f.select :church_campus_id, ChurchCampu.order('id asc').collect{ |c| [c.name ,c.id] }, {}, :class => 'form-control' %>
       </div>
 
-      <div>
+      <div class="field form-group">
         <%= label :genre, 'Genero' %><br>
         <%= f.radio_button :genre, 0, :checked => 'checked' %> 
         <%= label :genre_male, 'Masculino' %>
@@ -39,58 +40,59 @@
         <%= label :genre_female, 'Femenino' %>
       </div>
       
-      <div class="field">
-        <%= f.label :phone1, 'Telefono #1' %><br />
-        <%= f.text_field :phone1 %>
+      <div class="field form-group">
+        <%= f.label :phone1, '* Telefono #1' %><br />
+        <%= f.text_field :phone1, :class => 'form-control', :required => true %>
       </div>
       
-      <div class="field">
+      <div class="field form-group">
         <%= f.label :phone2, 'Telefono #2' %><br />
-        <%= f.text_field :phone2 %>
+        <%= f.text_field :phone2, :class => 'form-control' %>
       </div>
       
-      <div class="field">
+      <div class="field form-group">
         <%= f.label :phone3, 'Telefono #3' %><br />
-        <%= f.text_field :phone3 %>
+        <%= f.text_field :phone3, :class => 'form-control' %>
       </div>
 
-      <div class="field">
+      <div class="field form-group">
         <%= f.label :address, 'Direccion' %><br />
-        <%= f.text_area :address %>
+        <%= f.text_area :address, :class => 'form-control' %>
       </div>
 
-      <hr />
+      <br />
 
-      <div>
-        <%= f.label :cdj_area, 'Area de participacion' %><br />
-        <%= select_tag :cdj_area, options_from_collection_for_select(CdjArea.order('id asc'), 'id', 'name'), :class => 'form-control' %>
+      <div class="field form-group">
+        <%= f.label :cdj_area, '* Area de participacion' %><br />
+        <%= f.select :cdj_area, CdjArea.order('id asc').collect{ |c| [c.name ,c.id] }, {}, :class => 'form-control' %>
       </div>
 
-      <hr />
+      <br />
+      <br />
 
-      <div class="field">
-        <%= f.label :email, 'Email' %><br />
-        <%= f.email_field :email %>
+      <h4>A modo de brindarle las ultimas notificaciones por favor cree un usuario en el sistema, ingresando su email y generando una contraseña.</h4>
+
+      <br />
+
+      <div class="field form-group">
+        <%= f.label :email, '* Email' %><br />
+        <%= f.email_field :email, :class => 'form-control', :required => true %>
       </div>
 
-      <div class="field">
-        <%= f.label :password, 'Contraseña' %>
-        <% if @minimum_password_length %>
-        <em>(Minimo <%= @minimum_password_length %> caracteres)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+      <div class="field form-group">
+        <%= f.label :password, '* Contraseña' %> <em>(Minimo <%= @minimum_password_length %> caracteres)</em>
+        <br />
+        <%= f.password_field :password, autocomplete: "off", :class => 'form-control' %>
       </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation, 'Confirmar contraseña' %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      <div class="field form-group">
+        <%= f.label :password_confirmation, '* Confirmar contraseña' %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control' %>
       </div>
 
-      <div class="actions">
-        <%= f.submit "Guardar" %>
+      <div class="actions right">
+        <%= f.submit "Guardar registro", :class => "btn btn-primary" %>
       </div>
     <% end %>
-
-    <%= render "church_members/shared/links" %>
   </div>
 </div>

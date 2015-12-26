@@ -27,11 +27,11 @@ if ChurchCampu.count == 0
 	ChurchCampu.create!(country_id: Country.all[0].id, name: "Miralvalle")
 	ChurchCampu.create!(country_id: Country.all[0].id, name: "Lourdes")
 	ChurchCampu.create!(country_id: Country.all[0].id, name: "Apopa")
-	ChurchCampu.create!(country_id: Country.all[1].id, name: "Ciudad de Guatemala")
-	ChurchCampu.create!(country_id: Country.all[2].id, name: "San Jose")
-	ChurchCampu.create!(country_id: Country.all[3].id, name: "Managua Los Robles")
-	ChurchCampu.create!(country_id: Country.all[3].id, name: "Managua Bolonia")
-	ChurchCampu.create!(country_id: Country.all[4].id, name: "Bogota")
+	# ChurchCampu.create!(country_id: Country.all[1].id, name: "Ciudad de Guatemala")
+	# ChurchCampu.create!(country_id: Country.all[2].id, name: "San Jose")
+	# ChurchCampu.create!(country_id: Country.all[3].id, name: "Managua Los Robles")
+	# ChurchCampu.create!(country_id: Country.all[3].id, name: "Managua Bolonia")
+	# ChurchCampu.create!(country_id: Country.all[4].id, name: "Bogota")
 end
 
 if CdjArea.count == 0

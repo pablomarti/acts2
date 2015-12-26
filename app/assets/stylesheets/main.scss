@@ -1,3 +1,16 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div.right{
+	text-align:right;
+}
+
+input[type=text], input[type=email], input[type=password], select {
+	height:40px;
+	color: #333333;
+}
+
+.center
+{
+	text-align:center;
+}
