@@ -1,0 +1,96 @@
+<h2 class="page-title">Registro <small>Statistics and more</small></h2>
+
+<div class="row">
+  <div class="col-lg-8">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="field">
+        <%= f.label :first_name, 'Nombre' %><br />
+        <%= f.text_field :first_name, autofocus: true %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :last_name, 'Apellido' %><br />
+        <%= f.text_field :last_name %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :birth_date, 'Fecha de nacimiento' %><br />
+        <%= f.date_select :birth_date %>
+      </div>
+
+      <div>
+        <%= f.label :country, 'Pais' %><br />
+        <%= select_tag :country, options_from_collection_for_select(Country.order('id asc'), 'id', 'name'), :class => 'form-control' %>
+      </div>
+
+      <div>
+        <%= f.label :church_campus_id, 'Campus' %><br />
+        <%= f.select :church_campus_id, ChurchCampu.order('id asc').collect{ |c| [c.name ,c.id] }, {}, :class => 'form-control' %>
+      </div>
+
+      <div>
+        <%= label :genre, 'Genero' %><br>
+        <%= f.radio_button :genre, 0, :checked => 'checked' %> 
+        <%= label :genre_male, 'Masculino' %>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <%= f.radio_button :genre, 1 %>
+        <%= label :genre_female, 'Femenino' %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :phone1, 'Telefono #1' %><br />
+        <%= f.text_field :phone1 %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :phone2, 'Telefono #2' %><br />
+        <%= f.text_field :phone2 %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :phone3, 'Telefono #3' %><br />
+        <%= f.text_field :phone3 %>
+      </div>
+
+      <div class="field">
+        <%= f.label :address, 'Direccion' %><br />
+        <%= f.text_area :address %>
+      </div>
+
+      <hr />
+
+      <div>
+        <%= f.label :cdj_area, 'Area de participacion' %><br />
+        <%= select_tag :cdj_area, options_from_collection_for_select(CdjArea.order('id asc'), 'id', 'name'), :class => 'form-control' %>
+      </div>
+
+      <hr />
+
+      <div class="field">
+        <%= f.label :email, 'Email' %><br />
+        <%= f.email_field :email %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password, 'Contraseña' %>
+        <% if @minimum_password_length %>
+        <em>(Minimo <%= @minimum_password_length %> caracteres)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, 'Confirmar contraseña' %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Guardar" %>
+      </div>
+    <% end %>
+
+    <%= render "church_members/shared/links" %>
+  </div>
+</div>
