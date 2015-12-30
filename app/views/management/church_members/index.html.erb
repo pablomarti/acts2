@@ -1,0 +1,33 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Apellido</th>
+      <th>Nombre</th>
+      <th>Genero</th>
+      <th>Nacimiento</th>
+      <th>Campus</th>
+      <th>Email</th>
+      <th>Telefono</th>
+      <th>CDJ</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @church_members.each do |member| %>
+      <tr>
+        <td><%= member.last_name %></td>
+        <td><%= member.first_name %></td>
+        <td><%= member.genre ? 'Femenino' : 'Masculino' %></td>
+        <td><%= member.birth_date %></td>
+        <td><%= member.church_campus.name %></td>
+        <td><%= member.email %></td>
+        <td><%= member.phone1 %></td>
+        <td><%= member.desired_cdj_area.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr />
+
+<%= link_to "Exportar", management_church_members_path(format: 'csv'), :class => 'btn btn-default' %>

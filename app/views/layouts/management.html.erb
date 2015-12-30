@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IBVN</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <%= csrf_meta_tags %>
+</head>
+
+<body class="background-dark">
+    <div class="logo">
+        <h4><a href="/">IBVN - <strong>2</strong></a></h4>
+    </div>
+
+    <nav id="sidebar" class="sidebar nav-collapse collapse">
+      <ul id="side-nav" class="side-nav">
+        <li class="active">
+            <a href="/management"><i class="fa fa-home"></i> <span class="name">Dashboard</span></a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="wrap">
+	    <header class="page-header">
+	    </header>
+
+	    <div class="content container">
+			   <%= yield %>
+		  </div>
+    </div>
+</body>
+
+</html>
