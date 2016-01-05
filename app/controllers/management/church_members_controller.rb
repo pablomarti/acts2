@@ -3,7 +3,7 @@ require 'csv'
 class Management::ChurchMembersController < Management::BaseController
 
 	def index
-	  @church_members = ChurchMember.order("last_name asc, first_name asc, id asc")
+	  @church_members = ChurchMember.order("id desc, last_name asc, first_name asc")
 	  respond_to do |format|
 	    format.html
 	    format.csv do

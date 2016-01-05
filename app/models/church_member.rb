@@ -24,4 +24,8 @@ class ChurchMember < ActiveRecord::Base
     genre ? 'Femenino' : 'Masculino'
   end
 
+  def age
+    (self.birth_date - Time.now).years
+  end
+
 end
