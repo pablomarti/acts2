@@ -25,8 +25,9 @@ class ChurchMember < ActiveRecord::Base
   end
 
   def age
+    dob = self.birth_date
     now = Time.now.utc.to_date
-    now.year - self.birth_date.year - (self.birth_date.to_date.change(:year => now.year) > now ? 1 : 0)
+    now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
   end
 
 end
