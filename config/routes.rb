@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   	get '' => 'church_members#index'
   end
 
-  get '/church_members' => 'church_members#index'
+  get '/church_members' => 'main#index'
 
   root 'main#index'
 
