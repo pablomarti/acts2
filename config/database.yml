@@ -50,6 +50,6 @@ test:
 production:
   <<: *default
   database: acts2_production
-  username: <%= ENV['ACTS2_DATABASE_USERNAME'] %>
-  password: <%= ENV['ACTS2_DATABASE_PASSWORD'] %>
+  username: root
+  password: 316Futuro
   socket: /var/run/mysqld/mysqld.sock
