@@ -64,7 +64,7 @@
 
       <div class="field form-group">
         <%= f.label :cdj_area, '* Area de participacion' %><br />
-        <%= f.select :cdj_area, CdjArea.order('id asc').collect{ |c| [c.name ,c.id] }, :disabled => ['1'], :class => 'form-control' %>
+        <%= f.select :cdj_area, CdjArea.order('id asc').collect{ |c| [c.name ,c.id] }, :disabled => ['18'], :class => 'form-control' %>
       </div>
 
       <br />
